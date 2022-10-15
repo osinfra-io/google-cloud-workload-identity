@@ -1,4 +1,4 @@
-# Google Cloud Platform - Workload Identity
+# <img align="left" width="45" height="45" src="https://user-images.githubusercontent.com/1610100/196006051-0ce38983-ffc9-4d5d-bf41-1da0b5e0fd6e.png">Google Cloud Platform - Workload Identity
 
 **[GitHub Actions](https://github.com/osinfra-io/google-cloud-workload-identity/actions):**
 
