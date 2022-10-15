@@ -1,0 +1,20 @@
+# Infracost Config File
+# https://www.infracost.io/docs/features/config_file
+
+version: 0.1
+
+projects:
+  - name: "Google Cloud Platform - Nonprod Workload Identity"
+    path: /
+    terraform_var_files:
+      - tfvars/nonprod.tfvars
+
+  - name: "Google Cloud Platform - Prod Workload Identity"
+    path: /
+    terraform_var_files:
+      - tfvars/prod.tfvars
+
+  - name: "Google Cloud Platform - Sandbox Workload Identity"
+    path: /
+    terraform_var_files:
+      - tfvars/sb.tfvars
