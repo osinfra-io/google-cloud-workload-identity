@@ -17,19 +17,23 @@ With [workload identity federation](https://cloud.google.com/iam/docs/workload-i
 ## Terraform Documentation
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-### Providers
+## Requirements
+
+No requirements.
+
+## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider_google) | 4.40.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 4.40.0 |
 
-### Modules
+## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_project"></a> [project](#module_project) | git@github.com:osinfra-io/terraform-google-project | n/a |
+| <a name="module_project"></a> [project](#module\_project) | git@github.com:osinfra-io/terraform-google-project | n/a |
 
-### Resources
+## Resources
 
 | Name | Type |
 |------|------|
@@ -37,17 +41,16 @@ With [workload identity federation](https://cloud.google.com/iam/docs/workload-i
 | [google_iam_workload_identity_pool_provider.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider) | resource |
 | [google_project_service.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_service) | resource |
 
-### Inputs
+## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_billing_account"></a> [billing_account](#input_billing_account) | The alphanumeric ID of the billing account this project belongs to | `string` | n/a | yes |
-| <a name="input_cis_2_2_logging_sink_project_id"></a> [cis_2_2_logging_sink_project_id](#input_cis_2_2_logging_sink_project_id) | The CIS 2.2 logging sink benchmark project ID | `string` | n/a | yes |
-| <a name="input_folder_id"></a> [folder_id](#input_folder_id) | The numeric ID of the folder this project should be created under. Only one of `org_id` or `folder_id` may be specified | `string` | n/a | yes |
-| <a name="input_env"></a> [env](#input_env) | The environment suffix for example: `sb` (Sandbox), `nonprod` (Non-Production), `prod` (Production) | `string` | `"sb"` | no |
-| <a name="input_workload_identity"></a> [workload_identity](#input_workload_identity) | This map defines resources for workload identity pools and providers | `map(any)` | `{}` | no |
+| <a name="input_billing_account"></a> [billing\_account](#input\_billing\_account) | The alphanumeric ID of the billing account this project belongs to | `string` | n/a | yes |
+| <a name="input_cis_2_2_logging_sink_project_id"></a> [cis\_2\_2\_logging\_sink\_project\_id](#input\_cis\_2\_2\_logging\_sink\_project\_id) | The CIS 2.2 logging sink benchmark project ID | `string` | n/a | yes |
+| <a name="input_env"></a> [env](#input\_env) | The environment suffix for example: `sb` (Sandbox), `nonprod` (Non-Production), `prod` (Production) | `string` | `"sb"` | no |
+| <a name="input_folder_id"></a> [folder\_id](#input\_folder\_id) | The numeric ID of the folder this project should be created under. Only one of `org_id` or `folder_id` may be specified | `string` | n/a | yes |
 
-### Outputs
+## Outputs
 
 No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -46,29 +46,29 @@ module "project" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool
 
 resource "google_iam_workload_identity_pool" "this" {
-  for_each = var.workload_identity
+  for_each = local.workload_identity
 
   description               = "Workload Identity Pool for ${each.key}"
   disabled                  = lookup(each.value, "disabled", false)
-  display_name              = "${each.key}-pool"
+  display_name              = "${each.key}-wif-pool"
   project                   = module.project.project_id
-  workload_identity_pool_id = "${each.key}-pool"
+  workload_identity_pool_id = "${each.key}-wif-pool"
 }
 
 # IAM Workload Identity Pool Provider Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider
 
 resource "google_iam_workload_identity_pool_provider" "this" {
-  for_each = var.workload_identity
+  for_each = local.workload_identity
 
   attribute_condition                = lookup(each.value, "attribute_condition", null)
   attribute_mapping                  = each.value.attribute_mapping
   description                        = "Workload Identity Pool Provider for ${each.key}"
   disabled                           = lookup(each.value, "disabled", false)
-  display_name                       = "${each.key}-provider"
+  display_name                       = "${each.key}-wif-provider"
   project                            = module.project.project_id
   workload_identity_pool_id          = google_iam_workload_identity_pool.this[each.key].workload_identity_pool_id
-  workload_identity_pool_provider_id = "${each.key}-provider"
+  workload_identity_pool_provider_id = "${each.key}-wif-provider"
 
   oidc {
     allowed_audiences = lookup(each.value, "allowed_audiences", [])

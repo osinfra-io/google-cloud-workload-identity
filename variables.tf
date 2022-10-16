@@ -22,9 +22,3 @@ variable "folder_id" {
   description = "The numeric ID of the folder this project should be created under. Only one of `org_id` or `folder_id` may be specified"
   type        = string
 }
-
-variable "workload_identity" {
-  description = "This map defines resources for workload identity pools and providers"
-  type        = map(any)
-  default     = {}
-}
