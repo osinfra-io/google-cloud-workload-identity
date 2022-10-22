@@ -2,7 +2,7 @@
 
 **[GitHub Actions](https://github.com/osinfra-io/google-cloud-workload-identity/actions):**
 
-[![Dependabot](https://github.com/osinfra-io/google-cloud-workload-identity/actions/workflows/dependabot.yml/badge.svg)](https://github.com/osinfra-io/google-cloud-workload-identity/actions/workflows/dependabot.yml)
+[![Infracost](https://github.com/osinfra-io/google-cloud-workload-identity/actions/workflows/infracost.yml/badge.svg)](https://github.com/osinfra-io/google-cloud-workload-identity/actions/workflows/infracost.yml) [![Dependabot](https://github.com/osinfra-io/google-cloud-workload-identity/actions/workflows/dependabot.yml/badge.svg)](https://github.com/osinfra-io/google-cloud-workload-identity/actions/workflows/dependabot.yml)
 
 **[Bridgecrew](https://www.bridgecrew.cloud/projects?types=Passed&repository=osinfra-io%2Fgoogle-cloud-workload-identity&branch=main):**
 
