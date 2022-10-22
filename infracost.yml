@@ -4,17 +4,17 @@
 version: 0.1
 
 projects:
-  - name: "Google Cloud Platform - Nonprod Workload Identity"
+  - name: "Google Cloud Platform - Workload Identity: Non-production"
     path: /
     terraform_var_files:
       - tfvars/nonprod.tfvars
 
-  - name: "Google Cloud Platform - Prod Workload Identity"
+  - name: "Google Cloud Platform - Workload Identity: Production"
     path: /
     terraform_var_files:
       - tfvars/prod.tfvars
 
-  - name: "Google Cloud Platform - Sandbox Workload Identity"
+  - name: "Google Cloud Platform - Workload Identity: Sandbox"
     path: /
     terraform_var_files:
       - tfvars/sb.tfvars
