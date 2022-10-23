@@ -42,11 +42,11 @@ module "project" {
 resource "google_iam_workload_identity_pool" "this" {
   for_each = local.workload_identity
 
-  description               = "Workload Identity Pool for ${each.key}"
+  description               = "Workload Identity Pool for ${each.value.display_name}"
   disabled                  = lookup(each.value, "disabled", false)
-  display_name              = "${each.key}-wif-pool"
+  display_name              = each.value.display_name
   project                   = module.project.project_id
-  workload_identity_pool_id = "${each.key}-wif-pool"
+  workload_identity_pool_id = each.key
 }
 
 # IAM Workload Identity Pool Provider Resource
@@ -57,12 +57,12 @@ resource "google_iam_workload_identity_pool_provider" "this" {
 
   attribute_condition                = lookup(each.value, "attribute_condition", null)
   attribute_mapping                  = each.value.attribute_mapping
-  description                        = "Workload Identity Pool Provider for ${each.key}"
+  description                        = "Workload Identity Pool Provider for ${each.value.display_name}"
   disabled                           = lookup(each.value, "disabled", false)
-  display_name                       = "${each.key}-wif-provider"
+  display_name                       = "${each.value.display_name} OIDC"
   project                            = module.project.project_id
   workload_identity_pool_id          = google_iam_workload_identity_pool.this[each.key].workload_identity_pool_id
-  workload_identity_pool_provider_id = "${each.key}-wif-provider"
+  workload_identity_pool_provider_id = "${each.key}-oidc"
 
   oidc {
     allowed_audiences = lookup(each.value, "allowed_audiences", [])
@@ -76,10 +76,6 @@ resource "google_iam_workload_identity_pool_provider" "this" {
 resource "google_project_service" "this" {
   for_each = toset(
     [
-      "cloudresourcemanager.googleapis.com",
-      "iam.googleapis.com",
-      "iamcredentials.googleapis.com",
-      "stackdriver.googleapis.com",
       "sts.googleapis.com"
     ]
   )

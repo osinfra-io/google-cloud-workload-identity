@@ -11,7 +11,8 @@ locals {
         "attribute.repository" = "assertion.repository"
         "google.subject"       = "assertion.sub"
       }
-      issuer_uri = "https://token.actions.githubusercontent.com"
+      display_name = "GitHub Actions"
+      issuer_uri   = "https://token.actions.githubusercontent.com"
     }
   }
 
