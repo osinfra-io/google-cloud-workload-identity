@@ -5,6 +5,7 @@ locals {
 
   workload_identity = {
     "github-actions" = {
+      attribute_condition = var.env == "sb" ? null : "assertion.ref==\"refs/heads/main\""
       attribute_mapping = {
         "attribute.actor"      = "assertion.actor"
         "attribute.aud"        = "assertion.aud"

@@ -15,7 +15,6 @@ variable "cis_2_2_logging_sink_project_id" {
 variable "env" {
   description = "The environment suffix for example: `sb` (Sandbox), `nonprod` (Non-Production), `prod` (Production)"
   type        = string
-  default     = "sb"
 }
 
 variable "folder_id" {
