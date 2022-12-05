@@ -16,4 +16,4 @@ With [workload identity federation](https://cloud.google.com/iam/docs/workload-i
 
 ## Terraform Documentation
 
-[Global Infrastructure](global/README.md)
+[Global Infrastructure](global/infra/README.md)
