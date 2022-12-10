@@ -79,6 +79,7 @@ resource "google_iam_workload_identity_pool_provider" "this" {
 resource "google_project_service" "this" {
   for_each = toset(
     [
+      "iamcredentials.googleapis.com",
       "sts.googleapis.com"
     ]
   )
