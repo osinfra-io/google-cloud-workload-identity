@@ -16,5 +16,4 @@ locals {
       issuer_uri   = "https://token.actions.githubusercontent.com"
     }
   }
-
 }

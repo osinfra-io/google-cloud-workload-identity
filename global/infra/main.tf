@@ -36,8 +36,7 @@ module "project" {
   system = "identity"
 }
 
-# To avoid subject collisions, we are using a shared map to create a single provider per workload identity pool.
-# If you need to federate with multiple providers, create multiple workload identity pools, each using a single workload identity provider.
+# To avoid subject collisions, we are using a single provider per workload identity pool.
 # https://cloud.google.com/iam/docs/best-practices-for-using-workload-identity-federation#avoid-subject-collisions
 
 # IAM Workload Identity Pool Resource
