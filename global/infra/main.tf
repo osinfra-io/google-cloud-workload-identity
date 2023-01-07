@@ -23,17 +23,17 @@ module "project" {
   billing_account                 = var.billing_account
   cis_2_2_logging_sink_project_id = var.cis_2_2_logging_sink_project_id
   cost_center                     = "x001"
-  env                             = var.env
+  description                     = "identity"
+  environment                     = var.environment
   folder_id                       = var.folder_id
 
   labels = {
-    "environment" = var.env,
-    "system"      = "identity",
-    "team"        = "shared"
+    "environment" = var.environment,
+    "description" = "identity",
+    "platform"    = "google-cloud-landing-zone",
   }
 
   prefix = "shared"
-  system = "identity"
 }
 
 # To avoid subject collisions, we are using a single provider per workload identity pool.
