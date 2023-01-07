@@ -36,5 +36,9 @@ No requirements.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_project_id"></a> [project\_id](#output\_project\_id) | The project ID |
+| <a name="output_project_number"></a> [project\_number](#output\_project\_number) | The project number |
+| <a name="output_workload_identity_pool_ids"></a> [workload\_identity\_pool\_ids](#output\_workload\_identity\_pool\_ids) | The workload identity pool IDs |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
