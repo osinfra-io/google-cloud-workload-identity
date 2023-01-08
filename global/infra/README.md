@@ -40,5 +40,6 @@ No requirements.
 |------|-------------|
 | <a name="output_project_id"></a> [project\_id](#output\_project\_id) | The project ID |
 | <a name="output_project_number"></a> [project\_number](#output\_project\_number) | The project number |
-| <a name="output_workload_identity_pool_ids"></a> [workload\_identity\_pool\_ids](#output\_workload\_identity\_pool\_ids) | The workload identity pool IDs |
+| <a name="output_workload_identity_pool_names"></a> [workload\_identity\_pool\_names](#output\_workload\_identity\_pool\_names) | The workload identity pool names |
+| <a name="output_workload_identity_pool_provider_names"></a> [workload\_identity\_pool\_provider\_names](#output\_workload\_identity\_pool\_provider\_names) | The workload identity pool provider names |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
