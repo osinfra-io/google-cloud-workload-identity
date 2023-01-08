@@ -17,3 +17,10 @@ output "workload_identity_pool_ids" {
     for k, v in google_iam_workload_identity_pool.this : k => v.name
   }
 }
+
+output "workload_identity_pool_provider_ids" {
+  description = "The workload identity pool provider IDs"
+  value = {
+    for k, v in google_iam_workload_identity_pool_provider.this : k => v.name
+  }
+}
