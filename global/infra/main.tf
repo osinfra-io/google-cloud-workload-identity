@@ -33,7 +33,7 @@ module "project" {
     "platform"    = "google-cloud-landing-zone",
   }
 
-  prefix = "shared"
+  prefix = "plt-lz"
 }
 
 # To avoid subject collisions, we are using a single provider per workload identity pool.
