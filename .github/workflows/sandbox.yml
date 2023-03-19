@@ -1,0 +1,28 @@
+name: Sandbox
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  global_infra:
+    name: "Global"
+    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/gcp-plan-and-apply.yml@v0.1.0
+    if: ${{ github.user != 'dependabot[bot]' }}
+    with:
+      checkout_ref: ${{ github.ref }}
+      github_environment: "Sandbox Infrastructure: Global"
+      service_account: plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com
+      terraform_state_bucket: plt-lz-identity-2c8b-sb
+      terraform_version: ${{ vars.TERRAFORM_VERSION }}
+      terraform_workspace: global-sandbox
+      working_directory: global/infra
+      workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
+    secrets:
+      gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      terraform_plan_secret_args: -var="organization_id=${{ secrets.ORGANIZATION_ID }}" -var="customer_id=${{ secrets.CUSTOMER_ID }}"
