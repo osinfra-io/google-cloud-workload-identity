@@ -7,12 +7,6 @@ on:
     paths-ignore:
       - "**.md"
 
-# For reusable workflows, the permissions setting for id-token should be set to write at the
-# caller workflow level or in the specific job that calls the reusable workflow.
-
-permissions:
-  id-token: write
-
 jobs:
   global_infra:
     name: "Global"
@@ -22,6 +16,7 @@ jobs:
       checkout_ref: ${{ github.ref }}
       github_environment: "Non-Production Infrastructure: Global"
       service_account: plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com
+      terraform_plan_args: -var-file=tfvars/non-production.tfvars
       terraform_state_bucket: plt-lz-identity-3bfe-nonprod
       terraform_version: ${{ vars.TERRAFORM_VERSION }}
       terraform_workspace: global-non-production
@@ -29,4 +24,4 @@ jobs:
       workload_identity_provider: projects/992372365053/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-      terraform_plan_secret_args: -var="organization_id=${{ secrets.ORGANIZATION_ID }}" -var="customer_id=${{ secrets.CUSTOMER_ID }}"
+      terraform_plan_secret_args: -var="billing_account=${{ secrets.BILLING_ACCOUNT }}"
