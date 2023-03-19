@@ -10,7 +10,7 @@ on:
 jobs:
   global_infra:
     name: "Global"
-    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/gcp-plan-and-apply.yml@v0.1.0
+    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/plan-and-apply.yml@v0.1.0
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     with:
       checkout_ref: ${{ github.ref }}
