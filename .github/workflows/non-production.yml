@@ -2,8 +2,9 @@ name: Non-Production
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Sandbox"]
+  push:
+    branches:
+      - main
     paths-ignore:
       - "**.md"
 
@@ -11,7 +12,6 @@ jobs:
   global_infra:
     name: "Global"
     uses: osinfra-io/github-terraform-called-workflows/.github/workflows/plan-and-apply.yml@v0.1.0
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     with:
       checkout_ref: ${{ github.ref }}
       github_environment: "Non-Production Infrastructure: Global"

@@ -3,7 +3,10 @@ name: Production
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Non-Production"]
+    workflows:
+      - Non-Production
+    types:
+      - completed
     paths-ignore:
       - "**.md"
 
