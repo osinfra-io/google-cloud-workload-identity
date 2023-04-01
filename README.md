@@ -41,7 +41,7 @@ None
 
 ### Roadmap
 
-- Link to roadmap: [GitHub Project](https://github.com/orgs/osinfra-io/projects/5/views/2)
+- Link to roadmap: [GitHub Project](https://github.com/orgs/osinfra-io/projects/1/views/7)
 
 ### Communication Channels
 
