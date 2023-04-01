@@ -6,6 +6,8 @@
 
 **[Infracost](https://www.infracost.io):**
 
+[![infracost](https://img.shields.io/endpoint?label=Sandbox%20Global%20Infrastructure&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/cdfd3281-bb1c-425b-aad0-1a80a1512502/branch/62383c83-9bf4-4fa9-8b48-7b96987f6fc1/google-cloud-workload-identity%2520-%2520Sandbox%253A%2520Global%2520Infrastructure)](https://dashboard.infracost.io/org/osinfra-io/repos/cdfd3281-bb1c-425b-aad0-1a80a1512502) [![infracost](https://img.shields.io/endpoint?label=Non-Production%20Global%20Infrastructure&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/cdfd3281-bb1c-425b-aad0-1a80a1512502/branch/62383c83-9bf4-4fa9-8b48-7b96987f6fc1/google-cloud-workload-identity%2520-%2520Non-Production%253A%2520Global%2520Infrastructure)](https://dashboard.infracost.io/org/osinfra-io/repos/cdfd3281-bb1c-425b-aad0-1a80a1512502) [![infracost](https://img.shields.io/endpoint?label=Production%20Global%20Infrastructure&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/cdfd3281-bb1c-425b-aad0-1a80a1512502/branch/62383c83-9bf4-4fa9-8b48-7b96987f6fc1/google-cloud-workload-identity%2520-%2520Production%253A%2520Global%2520Infrastructure)](https://dashboard.infracost.io/org/osinfra-io/repos/cdfd3281-bb1c-425b-aad0-1a80a1512502)
+
 ## Repository Description
 
 This repository configures [workload identity federation](https://cloud.google.com/iam/docs/workload-identity-federation) that aligns with our [Google Cloud landing zone platform](https://docs.osinfra.io/google-cloud-platform/landing-zone) design. A landing zone should be a prerequisite to deploying enterprise workloads in a cloud environment.
