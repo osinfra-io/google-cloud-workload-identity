@@ -18,7 +18,7 @@ terraform {
 # https://github.com/osinfra-io/terraform-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/terraform-google-project"
+  source = "github.com/osinfra-io/terraform-google-project?ref=v0.1.0"
 
   billing_account                 = var.billing_account
   cis_2_2_logging_sink_project_id = var.cis_2_2_logging_sink_project_id
