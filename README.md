@@ -49,14 +49,14 @@ None
 
 Contact exclusively via:
 
-- Google Chat: [Platform - Google Cloud Landing Zone](https://chat.google.com/room/AAAAYvP1tRg?cls=7)
+- Discord: [Platform - Google Cloud Landing Zone](https://discord.gg/YPg4AmMDvF)
 - Phone number:
 
 #### To ask for support or provide feedback
 
 Contact via any of these:
 
-- Google Chat: [Platform - Google Cloud Landing Zone](https://chat.google.com/room/AAAAYvP1tRg?cls=7)
+- Discord: [Platform - Google Cloud Landing Zone](https://discord.gg/YPg4AmMDvF)
 - Email address: [platform-google-cloud-landing-zone@osinfra.io](mailto:platform-google-cloud-landing-zone@osinfra.io)
 - Phone number:
 - Office hours (EST): `Weekdays 5:00 PM - 10:00 PM` `Weekends 8:00 AM - 5:00 PM`
@@ -71,7 +71,6 @@ See the documentation for setting up a local development environment [here](http
 
 ### Tools
 
-- [checkov](https://github.com/bridgecrewio/checkov)
 - [pre-commit](https://github.com/pre-commit/pre-commit)
 - [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform)
 - [terraform-docs](https://github.com/terraform-docs/terraform-docs)

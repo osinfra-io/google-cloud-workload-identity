@@ -4,19 +4,19 @@
 version: 0.1
 
 projects:
-  - name: "google-cloud-workload-identity - Sandbox: Global Infrastructure"
+  - name: "google-cloud-workload-identity - Sandbox Infrastructure: Global"
     path: global/infra
     terraform_var_files:
       - tfvars/sandbox.tfvars
     usage_file: global/infra/infracost/sandbox.yml
 
-  - name: "google-cloud-workload-identity - Non-Production: Global Infrastructure"
+  - name: "google-cloud-workload-identity - Non-Production Infrastructure: Global"
     path: global/infra
     terraform_var_files:
       - tfvars/non-production.tfvars
     usage_file: global/infra/infracost/non-production.yml
 
-  - name: "google-cloud-workload-identity - Production: Global Infrastructure"
+  - name: "google-cloud-workload-identity - Production Infrastructure: Global"
     path: global/infra
     terraform_var_files:
       - tfvars/production.tfvars
