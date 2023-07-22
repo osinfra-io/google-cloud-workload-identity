@@ -39,7 +39,7 @@ See the documentation for setting up a local development environment [here](http
 Links to documentation and other resources required to develop and iterate in this repository successfully.
 
 - [workload identity federation](https://cloud.google.com/iam/docs/workload-identity-federation)
-- [best practices for using workload identity federation](https://cloud.google.com/iam/docs/best-practices-for-using-workload-identity-federation).
+- [best practices for using workload identity federation](https://cloud.google.com/iam/docs/best-practices-for-using-workload-identity-federation)
 - [gitHub configuring openid connect in gcp](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-google-cloud-platform)
 
 ### 📓 Terraform Documentation
