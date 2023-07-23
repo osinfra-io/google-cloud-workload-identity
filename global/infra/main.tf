@@ -18,7 +18,7 @@ terraform {
 # https://github.com/osinfra-io/terraform-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/terraform-google-project?ref=v0.1.2"
+  source = "github.com/osinfra-io/terraform-google-project//global?ref=v0.1.2"
 
   billing_account                 = var.billing_account
   cis_2_2_logging_sink_project_id = var.cis_2_2_logging_sink_project_id
@@ -34,6 +34,11 @@ module "project" {
   }
 
   prefix = "plt-lz"
+
+  services = [
+    "iamcredentials.googleapis.com",
+    "sts.googleapis.com"
+  ]
 }
 
 # To avoid subject collisions, we are using a single provider per workload identity pool.
@@ -71,21 +76,4 @@ resource "google_iam_workload_identity_pool_provider" "this" {
     allowed_audiences = lookup(each.value, "allowed_audiences", [])
     issuer_uri        = each.value.issuer_uri
   }
-}
-
-# Project Service Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_project_service
-
-resource "google_project_service" "this" {
-  for_each = toset(
-    [
-      "iamcredentials.googleapis.com",
-      "sts.googleapis.com"
-    ]
-  )
-
-  project = module.project.project_id
-  service = each.key
-
-  disable_on_destroy = false
 }

@@ -9,13 +9,13 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.61.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 4.74.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_project"></a> [project](#module\_project) | github.com/osinfra-io/terraform-google-project | v0.1.0 |
+| <a name="module_project"></a> [project](#module\_project) | github.com/osinfra-io/terraform-google-project//global | v0.1.2 |
 
 ## Resources
 
@@ -23,7 +23,6 @@ No requirements.
 |------|------|
 | [google_iam_workload_identity_pool.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool) | resource |
 | [google_iam_workload_identity_pool_provider.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider) | resource |
-| [google_project_service.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_service) | resource |
 
 ## Inputs
 
