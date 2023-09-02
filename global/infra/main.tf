@@ -63,7 +63,7 @@ resource "google_iam_workload_identity_pool" "this" {
 resource "google_iam_workload_identity_pool_provider" "this" {
   for_each = local.workload_identity
 
-  attribute_condition                = lookup(each.value, "attribute_condition", null)
+  attribute_condition                = each.value.attribute_condition
   attribute_mapping                  = each.value.attribute_mapping
   description                        = "Workload Identity Pool Provider for ${each.value.display_name}"
   disabled                           = lookup(each.value, "disabled", false)
