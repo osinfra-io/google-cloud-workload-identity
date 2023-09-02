@@ -29,8 +29,6 @@ locals {
       # from an external token.
 
       attribute_mapping = {
-        "attribute.actor"      = "assertion.actor"
-        "attribute.aud"        = "assertion.aud"
         "attribute.repository" = "assertion.repository"
         "google.subject"       = "assertion.sub"
       }
