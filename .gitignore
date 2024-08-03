@@ -27,10 +27,13 @@ override.tf.json
 # Ignore plan output files
 plan.out
 
-# Ignore infracost directories and files
+# Ignore checkov directories and files
+.external_modules
+
+# Ignore Infracost directories and files
 .infracost
 
-# Other files
+# Other Files
 *.log
 *.bak
 *.swp
