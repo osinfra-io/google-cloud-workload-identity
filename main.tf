@@ -37,7 +37,7 @@ module "datadog" {
   is_cspm_enabled                    = true
   is_security_command_center_enabled = true
   labels                             = local.labels
-  project                            = module.project.project_id
+  project                            = module.project.id
 }
 
 # Google Project Module (osinfra.io)
@@ -78,7 +78,7 @@ resource "google_iam_workload_identity_pool" "this" {
   description               = "Workload Identity Pool for ${each.value.display_name}"
   disabled                  = lookup(each.value, "disabled", false)
   display_name              = each.value.display_name
-  project                   = module.project.project_id
+  project                   = module.project.id
   workload_identity_pool_id = each.key
 }
 
@@ -93,7 +93,7 @@ resource "google_iam_workload_identity_pool_provider" "this" {
   description                        = "Workload Identity Pool Provider for ${each.value.display_name}"
   disabled                           = lookup(each.value, "disabled", false)
   display_name                       = "${each.value.display_name} OIDC"
-  project                            = module.project.project_id
+  project                            = module.project.id
   workload_identity_pool_id          = google_iam_workload_identity_pool.this[each.key].workload_identity_pool_id
   workload_identity_pool_provider_id = "${each.key}-oidc"
 

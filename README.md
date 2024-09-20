@@ -52,14 +52,14 @@ Links to documentation and other resources required to develop and iterate in th
 
 | Name | Version |
 |------|---------|
-| google | 5.39.1 |
+| google | 6.3.0 |
 
 #### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| datadog | github.com/osinfra-io/terraform-datadog-google-integration | v0.2.1 |
-| project | github.com/osinfra-io/terraform-google-project | v0.3.0 |
+| datadog | github.com/osinfra-io/terraform-datadog-google-integration | v0.3.0 |
+| project | github.com/osinfra-io/terraform-google-project | v0.4.0 |
 
 #### Resources
 
