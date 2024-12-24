@@ -2,14 +2,6 @@
 # https://www.terraform.io/language/values/locals
 
 locals {
-  labels = {
-    cost-center = "x001"
-    env         = var.environment
-    repository  = "google-cloud-workload-identity"
-    platform    = "google-cloud-landing-zone"
-    team        = "platform-google-cloud-landing-zone"
-  }
-
   workload_identity = {
     "github-actions" = {
 
@@ -29,7 +21,7 @@ locals {
 
       # curl -H "Authorization: token $GITHUB_READ_ORG_TOKEN" https://api.github.com/orgs/osinfra-io
 
-      attribute_condition = var.environment == "sb" ? "assertion.repository_owner_id==\"104685378\"" : "assertion.repository_owner_id==\"104685378\" && assertion.ref==\"refs/heads/main\""
+      attribute_condition = module.helpers.env == "sb" ? "assertion.repository_owner_id==\"104685378\"" : "assertion.repository_owner_id==\"104685378\" && assertion.ref==\"refs/heads/main\""
 
       # The tokens issued by your external identity provider contain one or more attributes. Some identity providers refer
       # to these attributes as claims. An attribute mapping defines how to derive the value of the Google STS token attribute

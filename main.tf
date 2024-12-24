@@ -31,12 +31,12 @@ provider "datadog" {
 
 module "datadog" {
   source = "github.com/osinfra-io/terraform-datadog-google-integration?ref=v0.3.0"
-  count  = var.enable_datadog ? 1 : 0
+  count  = var.datadog_enable ? 1 : 0
 
   api_key                            = var.datadog_api_key
   is_cspm_enabled                    = true
   is_security_command_center_enabled = true
-  labels                             = local.labels
+  labels                             = module.helpers.labels
   project                            = module.project.id
 }
 
@@ -46,12 +46,11 @@ module "datadog" {
 module "project" {
   source = "github.com/osinfra-io/terraform-google-project?ref=v0.4.5"
 
-  billing_account                 = var.billing_account
-  cis_2_2_logging_sink_project_id = var.cis_2_2_logging_sink_project_id
+  billing_account                 = var.project_billing_account
+  cis_2_2_logging_sink_project_id = var.project_cis_2_2_logging_sink_project_id
   description                     = "identity"
-  environment                     = var.environment
-  folder_id                       = var.folder_id
-  labels                          = local.labels
+  folder_id                       = var.project_folder_id
+  labels                          = module.helpers.labels
   prefix                          = "plt-lz"
 
   services = [
