@@ -22,7 +22,6 @@ repos:
         args:
           - --hook-config=--retry-once-with-cleanup=true
           - --tf-init-args=-upgrade
-        exclude: tests/fixtures/shared
 
       # Always run after terraform_validate
 
