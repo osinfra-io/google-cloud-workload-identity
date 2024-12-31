@@ -72,7 +72,7 @@ module "project" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool
 
 resource "google_iam_workload_identity_pool" "this" {
-  for_each = local.workload_identity
+  for_each = local.workload_identities
 
   description               = "Workload Identity Pool for ${each.value.display_name}"
   disabled                  = lookup(each.value, "disabled", false)
@@ -85,10 +85,10 @@ resource "google_iam_workload_identity_pool" "this" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider
 
 resource "google_iam_workload_identity_pool_provider" "this" {
-  for_each = local.workload_identity
+  for_each = local.workload_identities
 
-  attribute_condition                = each.value.attribute_condition
-  attribute_mapping                  = each.value.attribute_mapping
+  attribute_condition                = lookup(each.value.attribute_condition, "")
+  attribute_mapping                  = lookup(each.value.attribute_mapping, "")
   description                        = "Workload Identity Pool Provider for ${each.value.display_name}"
   disabled                           = lookup(each.value, "disabled", false)
   display_name                       = "${each.value.display_name} OIDC"

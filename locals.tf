@@ -2,7 +2,12 @@
 # https://www.terraform.io/language/values/locals
 
 locals {
-  workload_identity = {
+  workload_identities = {
+    "backstage" = {
+      display_name = "Backstage"
+      issuer_uri   = module.helpers.env == "sb" ? "https://backstage.sb.gcp.sandbox.osinfra.io" : "https://backstage.gcp.osinfra.io"
+    }
+
     "github-actions" = {
 
       # An attribute condition is a Common Expression Language (CEL) expression that can check assertion attributes and
