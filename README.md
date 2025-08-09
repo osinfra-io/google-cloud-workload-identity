@@ -25,7 +25,7 @@ Our focus is on the core fundamental practice of platform engineering, Infrastru
 
 >Open Source Infrastructure (as Code) is a development model for infrastructure that focuses on open collaboration and applying relative lessons learned from software development practices that organizations can use internally at scale. - [Open Source Infrastructure (as Code)](https://www.osinfra.io)
 
-To avoid slowing down stream-aligned teams, we want to open up the possibility for contributions. The Open Source Infrastructure (as Code) model allows team members external to the platform team to contribute with only a slight increase in cognitive load. This section is for developers who want to contribute to this repository, describing the tools used, the skills, and the knowledge required, along with Terraform documentation.
+To avoid slowing down stream-aligned teams, we want to open up the possibility for contributions. The Open Source Infrastructure (as Code) model allows team members external to the platform team to contribute with only a slight increase in cognitive load. This section is for developers who want to contribute to this repository, describing the tools used, the skills, and the knowledge required, along with OpenTofu documentation.
 
 See the documentation for setting up a development environment [here](https://docs.osinfra.io/fundamentals/development-setup).
 
@@ -45,7 +45,7 @@ Links to documentation and other resources required to develop and iterate in th
 - [best practices for using workload identity federation](https://cloud.google.com/iam/docs/best-practices-for-using-workload-identity-federation)
 - [gitHub configuring openid connect in gcp](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-google-cloud-platform)
 
-### 📓 Terraform Documentation
+### 📓 OpenTofu Documentation
 
 <!-- BEGIN_TF_DOCS -->
 #### Providers
@@ -58,16 +58,16 @@ Links to documentation and other resources required to develop and iterate in th
 
 | Name | Source | Version |
 |------|--------|---------|
-| datadog | github.com/osinfra-io/terraform-datadog-google-integration | v0.3.0 |
-| helpers | github.com/osinfra-io/terraform-core-helpers//root | v0.1.2 |
-| project | github.com/osinfra-io/terraform-google-project | v0.4.5 |
+| datadog | github.com/osinfra-io/opentofu-datadog-google-integration | v0.3.0 |
+| helpers | github.com/osinfra-io/opentofu-core-helpers//root | v0.1.2 |
+| project | github.com/osinfra-io/opentofu-google-project | v0.4.5 |
 
 #### Resources
 
 | Name | Type |
 |------|------|
-| [google_iam_workload_identity_pool.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool) | resource |
-| [google_iam_workload_identity_pool_provider.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider) | resource |
+| [google_iam_workload_identity_pool.this](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/iam_workload_identity_pool) | resource |
+| [google_iam_workload_identity_pool_provider.this](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider) | resource |
 
 #### Inputs
 
