@@ -1,5 +1,5 @@
 # Output Values
-# https://www.terraform.io/language/values/outputs
+# https://opentofu.org/docs/language/values/outputs
 
 output "project_number" {
   description = "The project number"

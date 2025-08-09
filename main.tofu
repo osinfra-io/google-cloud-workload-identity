@@ -1,19 +1,19 @@
 terraform {
 
   # Requiring Providers
-  # https://www.terraform.io/language/providers/requirements#requiring-providers
+  # https://opentofu.org/docs/language/providers/requirements#requiring-providers
 
   required_providers {
 
     # Datadog Provider
-    # https://registry.terraform.io/providers/DataDog/datadog/latest/docs
+    # https://search.opentofu.org/provider/DataDog/datadog/latest/docs
 
     datadog = {
       source = "datadog/datadog"
     }
 
     # Google Cloud Platform Provider
-    # https://registry.terraform.io/providers/hashicorp/google/latest/docs
+    # https://search.opentofu.org/provider/hashicorp/google/latest/docs
 
     google = {
       source = "hashicorp/google"
@@ -26,11 +26,21 @@ provider "datadog" {
   app_key = var.datadog_app_key
 }
 
+# Google Cloud Provider
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs
+
+# This is only needed during bootstrapping.
+
+# provider "google" {
+#   billing_project       = var.billing_project
+#   user_project_override = true
+# }
+
 # Datadog Google Cloud Platform Integration Module (osinfra.io)
-# https://github.com/osinfra-io/terraform-datadog-google-integration
+# https://github.com/osinfra-io/opentofu-datadog-google-integration
 
 module "datadog" {
-  source = "github.com/osinfra-io/terraform-datadog-google-integration?ref=v0.3.6"
+  source = "github.com/osinfra-io/opentofu-datadog-google-integration?ref=v0.3.6"
   count  = var.datadog_enable ? 1 : 0
 
   api_key                            = var.datadog_api_key
@@ -41,10 +51,10 @@ module "datadog" {
 }
 
 # Google Project Module (osinfra.io)
-# https://github.com/osinfra-io/terraform-google-project
+# https://github.com/osinfra-io/opentofu-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/terraform-google-project?ref=v0.4.6"
+  source = "github.com/osinfra-io/opentofu-google-project?ref=v0.4.6"
 
   billing_account                 = var.project_billing_account
   cis_2_2_logging_sink_project_id = var.project_cis_2_2_logging_sink_project_id
@@ -69,7 +79,7 @@ module "project" {
 # https://cloud.google.com/iam/docs/best-practices-for-using-workload-identity-federation#avoid-subject-collisions
 
 # IAM Workload Identity Pool Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/iam_workload_identity_pool
 
 resource "google_iam_workload_identity_pool" "this" {
   for_each = local.workload_identity
@@ -82,7 +92,7 @@ resource "google_iam_workload_identity_pool" "this" {
 }
 
 # IAM Workload Identity Pool Provider Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider
 
 resource "google_iam_workload_identity_pool_provider" "this" {
   for_each = local.workload_identity
