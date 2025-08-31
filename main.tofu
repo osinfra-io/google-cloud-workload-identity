@@ -147,3 +147,9 @@ resource "google_iam_workload_identity_pool_provider" "this" {
     issuer_uri        = each.value.issuer_uri
   }
 }
+
+resource "null_resource" "force_apply" {
+  triggers = {
+    always_run = timestamp()
+  }
+}
